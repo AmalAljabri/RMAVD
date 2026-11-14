@@ -12,8 +12,7 @@ RMAVD detects vulnerabilities in Python repositories with three agents.
 
 ## Dataset
 **RealVuln** 26 intentionally vulnerable Python repositories.
-[Github](https://github.com/kolega-ai/Real-Vuln-Benchmark) 
-[Huggingface](https://huggingface.co/datasets/Kolega-Dev/RealVuln) 
+[Github](https://github.com/kolega-ai/Real-Vuln-Benchmark) | [Huggingface](https://huggingface.co/datasets/Kolega-Dev/RealVuln)
 
 **Matching rule:** a finding matches an entry when the file is the same, the CWE is among the acceptable CWEs of the entry, and the line is within ±10 lines. Each entry is matched only once.
 
@@ -32,31 +31,38 @@ RMAVD detects vulnerabilities in Python repositories with three agents.
 
 <table>
   <tr>
-    <td><img src="figs/metrics_comparison.png" alt="Metrics comparison"><br><sub>(a) Evaluation metrics</sub></td>
+    <td><img src="figs/metrics_comparison.png" alt="Metrics"><br><sub>(a) Metrics</sub></td>
     <td><img src="figs/confusion_matrix.png" alt="Confusion matrices"><br><sub>(b) Confusion matrices</sub></td>
   </tr>
   <tr>
     <td><img src="figs/stacked_components.png" alt="Confusion matrix components"><br><sub>(c) Confusion matrix components</sub></td>
-    <td><img src="figs/per_repo_f1.png" alt="Per-repository F1-score"><br><sub>(d) Per-repository F1-score</sub></td>
+    <td><img src="figs/per_repo_f1.png" alt="F1-score per repository"><br><sub>(d) F1-score per repository</sub></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><img src="figs/metrics_radar.png" alt="Radar chart" width="45%"><br><sub>(e) Radar chart</sub></td>
   </tr>
 </table>
+
+**Fig. 4.** Exp1 versus Exp2: (a) metrics, (b) confusion matrices, (c) confusion matrix components, (d) F1-score per repository, and (e) radar chart.
 
 ## Application
 
 <table>
   <tr>
-    <td><img src="figs/screenshot1.png" alt="Scan progress, Agent 1 only"><br><sub>(a) Scan progress, Agent 1 only</sub></td>
-    <td><img src="figs/screenshot2.png" alt="Findings table of Agent 1"><br><sub>(b) Findings table of Agent 1</sub></td>
+    <td><img src="figs/screenshot1.png" alt="Agent 1 only: scan progress"><br><sub>(a) Agent 1 only: scan progress</sub></td>
+    <td><img src="figs/screenshot2.png" alt="Agent 1 only: findings table"><br><sub>(b) Agent 1 only: findings table</sub></td>
   </tr>
   <tr>
-    <td><img src="figs/screenshot3.png" alt="Finding details, Agent 1"><br><sub>(c) Finding details with the reason of Agent 1</sub></td>
-    <td><img src="figs/screenshot4.png" alt="Scan progress, three agents"><br><sub>(d) Scan progress, all three agents</sub></td>
+    <td><img src="figs/screenshot3.png" alt="Agent 1 only: details of a selected finding"><br><sub>(c) Agent 1 only: details of a selected finding</sub></td>
+    <td><img src="figs/screenshot4.png" alt="Three agents: scan progress"><br><sub>(d) Three agents: scan progress</sub></td>
   </tr>
   <tr>
-    <td><img src="figs/screenshot5.png" alt="Findings table after review"><br><sub>(e) Findings table after Agent 2 and Agent 3</sub></td>
-    <td><img src="figs/screenshot6.png" alt="Finding details, three agents"><br><sub>(f) Finding details with the decisions of the three agents</sub></td>
+    <td><img src="figs/screenshot5.png" alt="Three agents: findings table after review"><br><sub>(e) Three agents: findings table after review</sub></td>
+    <td><img src="figs/screenshot6.png" alt="Three agents: details of a selected finding"><br><sub>(f) Three agents: details of a selected finding</sub></td>
   </tr>
 </table>
+
+**Fig. 3.** Screenshots of the scanning page of the RMAVD application: Agent 1 only (a)–(c) and all three agents (d)–(f).
 
 ## Citation
 
