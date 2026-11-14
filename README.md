@@ -20,8 +20,8 @@ RMAVD detects vulnerabilities in Python repositories with three agents.
 
 | File | Description |
 |---|---|
-| `RMAVD_Framework.ipynb` | The three agents, Exp1 and Exp2, and the metrics |
-| `RMAVD_analysis_local.ipynb` | Extended analysis: F2/F3, bootstrap over repositories, error analysis, Judge threshold sensitivity, split-half validation |
+| `RMAVD.ipynb` | The three agents, Exp1 and Exp2, and the metrics |
+| `RMAVD_analysis.ipynb` | Extended analysis: F2/F3, bootstrap over repositories, error analysis, Judge threshold sensitivity, split-half validation |
 | Streamlit app | Page 1: evaluation dashboard. Page 2: scanner for public GitHub repositories |
 
 ## Results (25 test repositories)
