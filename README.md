@@ -11,18 +11,22 @@ RMAVD detects vulnerabilities in Python repositories with three agents.
 | Agent 3: Judge | Rule-based decision, no LLM | none |
 
 ## Dataset
-
-[RealVuln](https://github.com/kolega-ai/Real-Vuln-Benchmark): 26 intentionally vulnerable Python repositories.
+**RealVuln** 26 intentionally vulnerable Python repositories.
+[Github](https://github.com/kolega-ai/Real-Vuln-Benchmark) 
+[Huggingface](https://huggingface.co/datasets/Kolega-Dev/RealVuln) 
 
 **Matching rule:** a finding matches an entry when the file is the same, the CWE is among the acceptable CWEs of the entry, and the line is within ±10 lines. Each entry is matched only once.
 
 ## Repository contents
 
-| File | Description |
+| File or folder | Description |
 |---|---|
 | `RMAVD.ipynb` | The three agents, Exp1 and Exp2, and the metrics |
 | `RMAVD_analysis.ipynb` | Extended analysis: F2/F3, bootstrap over repositories, error analysis, Judge threshold sensitivity, split-half validation |
-| Streamlit app | Page 1: evaluation dashboard. Page 2: scanner for public GitHub repositories |
+| `core.py` | Functions used by the Streamlit application (agents, matching rule, and metrics) |
+| `app.py` | Streamlit application. Page 1: evaluation dashboard. Page 2: scanner for public GitHub repositories |
+| `results/` | Saved results of the experiments |
+| `figs/` | Figures and application screenshots |
 
 ## Results (25 test repositories)
 
@@ -30,6 +34,10 @@ RMAVD detects vulnerabilities in Python repositories with three agents.
   <tr>
     <td><img src="figs/metrics_comparison.png" alt="Metrics comparison"><br><sub>(a) Evaluation metrics</sub></td>
     <td><img src="figs/confusion_matrix.png" alt="Confusion matrices"><br><sub>(b) Confusion matrices</sub></td>
+  </tr>
+  <tr>
+    <td><img src="figs/stacked_components.png" alt="Confusion matrix components"><br><sub>(c) Confusion matrix components</sub></td>
+    <td><img src="figs/per_repo_f1.png" alt="Per-repository F1-score"><br><sub>(d) Per-repository F1-score</sub></td>
   </tr>
 </table>
 
