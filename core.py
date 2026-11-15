@@ -6,7 +6,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import ollama
 
-RESULTS_DIR = Path(os.environ.get("RESULTS_DIR", '/content/results'))
+# RESULTS_DIR = Path(os.environ.get("RESULTS_DIR", '/content/results'))
+RESULTS_DIR = Path(__file__).resolve().parent / "results"
 EXP1_PATH, EXP2_PATH = RESULTS_DIR / "exp1_results.json", RESULTS_DIR / "exp2_results.json"
 
 
@@ -234,7 +235,13 @@ def match_rfc(pred, gt, tol=10):
         return False
     return gt["start_line"] - tol <= int(pred["line_number"]) <= gt["end_line"] + tol
 
-
+def evaluate_repos(results):
+    total = {"tp": 0, "fp": 0, "fn": 0, "tn": 0}
+    for r in results:
+        c = evaluate_rfc(r["predictions"], r["gt_entries"])
+        for k in total:
+            total[k] += c[k]
+    return total
 def evaluate_rfc(predictions, gt_entries):
     """Every ground-truth entry is consumed once.
     Matched real entry = TP | matched trap or no match = FP | real entry never matched = FN | trap never hit = TN."""
