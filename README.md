@@ -1,6 +1,6 @@
 # RMAVD: A Repository-Level Multi-Agent Framework for Software Vulnerability Detection
 
-RMAVD detects vulnerabilities in Python repositories with three agents. 
+RMAVD detects vulnerabilities in Python repositories with three agents.
 
 ## Agents
 
@@ -63,6 +63,32 @@ RMAVD detects vulnerabilities in Python repositories with three agents.
 </table>
 
 **Fig. 3.** Screenshots of the scanning page of the RMAVD application: Agent 1 only (a)–(c) and all three agents (d)–(f).
+
+## Run on Google Colab
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/AmalAljabri/RMAVD/blob/main/RMAVD.ipynb)
+
+1. Click the badge to open `RMAVD.ipynb` in Google Colab.
+2. Select a GPU: **Runtime > Change runtime type > T4 GPU**.
+3. Run the cells in order. Run Experiment 1, then Experiment 2, and re-run each cell until it shows `25/25 repos done`.
+
+## View the saved results (no re-run)
+
+The `results/` folder already contains `exp1_results.json` and `exp2_results.json`.
+
+- **App:** run `streamlit run app.py` and open **Data evaluation dashboard**.
+- **Notebook:** run Part 1 to Part 3, skip Experiment 1 and Experiment 2, then run Part 5. On Colab, upload the two files to `/content/results/` first.
+
+## Run locally (VS Code)
+
+```bash
+git clone https://github.com/AmalAljabri/RMAVD.git && cd RMAVD
+pip install streamlit pandas numpy matplotlib requests ollama datasets gitpython jupyter ipykernel
+ollama serve   # skip if the Ollama app is already running (use a separate terminal)
+ollama pull qwen2.5-coder:14b
+ollama pull deepseek-coder-v2:16b
+streamlit run app.py
+```
 
 ## Citation
 
